@@ -17,9 +17,9 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
-  
+
   -- which key
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',             opts = {} },
 
   -- treesitter
   {
@@ -31,22 +31,25 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
-  -- mason 
+  -- mason
   { 'williamboman/mason.nvim' },
 
   -- lsp stuff
-  {'williamboman/mason-lspconfig.nvim'},
-  {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
-  {'neovim/nvim-lspconfig'},
-  {'hrsh7th/cmp-nvim-lsp'},
-  {'hrsh7th/nvim-cmp'},
-  {'L3MON4D3/LuaSnip'},
+  { 'williamboman/mason-lspconfig.nvim' },
+  { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+  { 'neovim/nvim-lspconfig' },
+  { 'hrsh7th/cmp-nvim-lsp' },
+  { 'hrsh7th/nvim-cmp' },
+  { 'L3MON4D3/LuaSnip' },
 
   -- none / null ls
   { "jay-babu/mason-null-ls.nvim" },
   { "nvimtools/none-ls.nvim" },
   { 'williamboman/mason.nvim' },
-  
+
+  -- copilot
+  { "zbirenbaum/copilot.lua" },
+
   -- telescope
   {
     'nvim-telescope/telescope.nvim',
@@ -81,6 +84,7 @@ require('lazy').setup({
   { 'mbbill/undotree' },
 
   -- Theme
+  { 'xiyaowong/transparent.nvim' },
   {
     "catppuccin/nvim",
     name = "catppuccin",
