@@ -86,6 +86,9 @@ require('lazy').setup({
   -- git worktree
   {'ThePrimeagen/git-worktree.nvim'},
 
+  -- tmux
+  { 'christoomey/vim-tmux-navigator' },
+
   -- Theme
   { 'xiyaowong/transparent.nvim' },
   {
