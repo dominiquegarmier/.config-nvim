@@ -7,6 +7,15 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[f]ind [b]uffers' }
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[f]ind [h]elp' })
 
 
+telescope.setup({
+  -- .. other settings
+  extensions = {
+    file_browser = {
+      hijack_netrw = true,
+    },
+  },
+})
+
 -- file browser
 telescope.load_extension "file_browser"
 vim.keymap.set("n", "<space>ft", ":Telescope file_browser<CR>", { noremap = true, desc = '[f]ile [t]ree' })
