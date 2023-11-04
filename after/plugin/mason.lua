@@ -1,4 +1,6 @@
 local lsp_zero = require('lsp-zero')
+local lspconfig = require('lspconfig')
+local path = lspconfig.util.path
 
 lsp_zero.preset('recommended')
 
@@ -36,6 +38,31 @@ require('lspconfig').lua_ls.setup({
   },
 })
 
+
+local function get_python_path(workspace)
+  -- Use activated virtualenv.
+  if vim.env.VIRTUAL_ENV then
+    return path.join(vim.env.VIRTUAL_ENV, 'bin', 'python')
+  end
+
+  -- Find and use virtualenv in workspace directory.
+  for _, pattern in ipairs({ '*', '.*' }) do
+    local match = vim.fn.glob(path.join(workspace, pattern, '.venv'))
+    if match ~= '' then
+      return path.join(path.dirname(match), 'bin', 'python')
+    end
+  end
+
+  -- Fallback to system Python.
+  return 'python3'
+end
+
+lspconfig.pyright.setup({
+  before_init = function(_, config)
+    config.settings.python.pythonPath = get_python_path(config.root_dir)
+  end
+})
+
 -- auto complete
 local cmp = require('cmp')
 local cmp_select = { behavoir = cmp.SelectBehavior.Select }
@@ -52,7 +79,8 @@ local null_ls = require('null-ls')
 null_ls.setup({
   sources = {
     null_ls.builtins.formatting.black,
-  }
+  },
+  auto_start=true,
 })
 
 require("mason-null-ls").setup({

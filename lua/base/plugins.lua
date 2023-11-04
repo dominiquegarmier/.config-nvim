@@ -83,6 +83,9 @@ require('lazy').setup({
   -- undo tree
   { 'mbbill/undotree' },
 
+  -- git worktree
+  {'ThePrimeagen/git-worktree.nvim'},
+
   -- Theme
   { 'xiyaowong/transparent.nvim' },
   {
