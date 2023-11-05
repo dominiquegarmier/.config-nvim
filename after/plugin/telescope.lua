@@ -26,3 +26,8 @@ vim.keymap.set('n', '<leader>gw', function() telescope.extensions.git_worktree.g
   { noremap = true, desc = '[g]it [w]orktrees' })
 vim.keymap.set('n', '<leader>gc', function() telescope.extensions.git_worktree.create_git_worktree() end,
   { noremap = true, desc = '[g]it [c]reate [w]orktree' })
+
+-- other git stuff
+vim.keymap.set('n', '<leader>gs', function() builtin.git_status() end, { noremap = true, desc = '[g]it [s]tatus' })
+vim.keymap.set('n', '<leader>gc', function() builtin.git_commits() end, { noremap = true, desc = '[g]it [c]ommits' })
+vim.keymap.set('n', '<leader>gb', function() builtin.git_branches() end, { noremap = true, desc = '[g]it [b]ranches' })

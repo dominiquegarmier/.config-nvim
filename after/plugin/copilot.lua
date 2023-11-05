@@ -8,5 +8,13 @@ copilot.setup({
   auto_start = true,
 })
 
-vim.keymap.set("i", "<C-l>", function() suggestion.accept_line() end)
-vim.keymap.set("i", "<C-c>", function() suggestion.next() end)
+local accept = function()
+  if suggestion.is_visible() then
+    suggestion.accept()
+  else
+    vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-l>", true, true, true), "n")
+  end
+end
+
+vim.keymap.set("i", "<C-l>", function() accept() end)
+
