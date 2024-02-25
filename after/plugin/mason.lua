@@ -80,7 +80,7 @@ null_ls.setup({
   sources = {
     null_ls.builtins.formatting.black,
   },
-  auto_start=true,
+  auto_start = true,
 })
 
 require("mason-null-ls").setup({

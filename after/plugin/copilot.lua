@@ -5,6 +5,9 @@ copilot.setup({
   suggestion = {
     auto_trigger = true,
   },
+  filetypes = {
+    markdown = true
+  },
   auto_start = true,
 })
 
