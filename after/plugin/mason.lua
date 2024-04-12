@@ -20,7 +20,7 @@ require('mason').setup({})
 -- lsp config
 require('mason-lspconfig').setup({
   ensure_installed = {
-    'lua_ls', 'rust_analyzer', 'pyright', 'clangd', 'ltex', 'tsserver'
+    'lua_ls', 'rust_analyzer', 'pyright', 'clangd', 'tsserver'
   },
   handlers = {
     lsp_zero.default_setup,

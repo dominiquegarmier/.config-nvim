@@ -92,6 +92,7 @@ require('lazy').setup({
 
   -- Theme
   { 'xiyaowong/transparent.nvim' },
+  --[[
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -103,8 +104,10 @@ require('lazy').setup({
       vim.cmd.colorscheme "catppuccin"
     end,
   },
-  
-  -- obsidian.nvim 
+  --]]
+  'ellisonleao/gruvbox.nvim',
+
+  -- obsidian.nvim
   {
     "epwalsh/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
@@ -120,8 +123,6 @@ require('lazy').setup({
     dependencies = {
       -- Required.
       "nvim-lua/plenary.nvim",
-
-      -- see below for full list of optional dependencies 👇
     },
     opts = {
       workspaces = {
@@ -134,10 +135,9 @@ require('lazy').setup({
           path = "~/vaults/work",
         },
       },
-
-      -- see below for full list of options 👇
     },
-  }
+  },
 
-
+  -- latex
+  { 'lervag/vimtex', lazy = false },
 })
