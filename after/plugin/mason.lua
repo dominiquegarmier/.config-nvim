@@ -86,5 +86,3 @@ null_ls.setup({
 require("mason-null-ls").setup({
   ensure_installed = { "black" }
 })
-
-vim.keymap.set("n", "<leader>fm", function() vim.lsp.buf.format() end)

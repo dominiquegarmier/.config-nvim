@@ -137,7 +137,4 @@ require('lazy').setup({
       },
     },
   },
-
-  -- latex
-  { 'lervag/vimtex', lazy = false },
 })
