@@ -41,7 +41,6 @@ require('lazy').setup({
   { 'neovim/nvim-lspconfig' },
   { 'hrsh7th/cmp-nvim-lsp' },
   { 'hrsh7th/nvim-cmp' },
-  { 'L3MON4D3/LuaSnip' },
 
   -- none / null ls
   { "jay-babu/mason-null-ls.nvim" },
@@ -108,6 +107,7 @@ require('lazy').setup({
   'ellisonleao/gruvbox.nvim',
 
   -- obsidian.nvim
+  --[[
   {
     "epwalsh/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
@@ -137,4 +137,5 @@ require('lazy').setup({
       },
     },
   },
+  --]]
 })

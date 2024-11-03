@@ -14,13 +14,12 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
 end)
 
-
 require('mason').setup({})
 
 -- lsp config
 require('mason-lspconfig').setup({
   ensure_installed = {
-    'lua_ls', 'rust_analyzer', 'pyright', 'clangd', 'tsserver'
+    'lua_ls', 'rust_analyzer', 'pyright', 'clangd',
   },
   handlers = {
     lsp_zero.default_setup,
