@@ -9,6 +9,12 @@ vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 -- format
 vim.keymap.set("n", "<leader>fm", function() vim.lsp.buf.format() end)
 
+-- quickfix
+vim.keymap.set('n', '<M-j>', '<cmd>cnext<CR>')
+vim.keymap.set('n', '<M-k>', '<cmd>cprev<CR>')
+vim.keymap.set('n', '<leader>qo', '<cmd>copen<CR>')
+vim.keymap.set('n', '<leader>qc', '<cmd>cclose<CR>')
+
 -- latex compile
 local verbose = false
 vim.keymap.set('n', '<leader>ll', function()
