@@ -91,51 +91,13 @@ require('lazy').setup({
 
   -- Theme
   { 'xiyaowong/transparent.nvim' },
-  --[[
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-      require("catppuccin").setup()
-
-      -- setup must be called before loading
-      vim.cmd.colorscheme "catppuccin"
-    end,
-  },
-  --]]
   'ellisonleao/gruvbox.nvim',
 
-  -- obsidian.nvim
-  --[[
+  -- latex
   {
-    "epwalsh/obsidian.nvim",
-    version = "*", -- recommended, use latest release instead of latest commit
-    lazy = true,
-    ft = "markdown",
-    -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-    -- event = {
-    --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-    --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
-    --   "BufReadPre path/to/my-vault/**.md",
-    --   "BufNewFile path/to/my-vault/**.md",
-    -- },
-    dependencies = {
-      -- Required.
-      "nvim-lua/plenary.nvim",
-    },
-    opts = {
-      workspaces = {
-        {
-          name = "personal",
-          path = "~/vaults/personal",
-        },
-        {
-          name = "work",
-          path = "~/vaults/work",
-        },
-      },
-    },
+    'lervag/vimtex',
+    init = function()
+      vim.g.vimtex_view_method = 'skim'
+    end
   },
-  --]]
 })
