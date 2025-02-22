@@ -27,13 +27,14 @@ require("mason-lspconfig").setup({
 		"rust_analyzer",
 		"pyright",
 		"clangd",
+		"tinymist",
 	},
 	handlers = {
 		lsp_zero.default_setup,
 	},
 })
 
-require("lspconfig").lua_ls.setup({
+lspconfig.lua_ls.setup({
 	settings = {
 		Lua = {
 			diagnostics = {
