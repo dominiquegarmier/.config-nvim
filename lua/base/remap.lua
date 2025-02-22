@@ -6,9 +6,6 @@ vim.keymap.set('i', 'jj', '<Esc>')
 -- file tree
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
--- format
-vim.keymap.set("n", "<leader>fm", function() vim.lsp.buf.format() end)
-
 -- quickfix
 vim.keymap.set('n', '<M-j>', '<cmd>cnext<CR>')
 vim.keymap.set('n', '<M-k>', '<cmd>cprev<CR>')

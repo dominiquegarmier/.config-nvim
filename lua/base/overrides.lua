@@ -18,6 +18,17 @@ opt.smartindent = true
 opt.breakindent = true
 opt.wrap = false
 
+-- markdown word wrap
+vim.api.nvim_create_autocmd(
+  "FileType", { pattern = { "markdown" }, command = "setlocal wrap" }
+)
+
+-- typst tabsize 2
+vim.api.nvim_create_autocmd(
+  "FileType", { pattern = { "typst" }, command = "setlocal tabstop=2 shiftwidth=2" }
+)
+
+
 -- search
 opt.hlsearch = false
 
@@ -28,5 +39,3 @@ opt.swapfile = false
 -- numbers
 opt.number = true
 opt.relativenumber = true
-
-
