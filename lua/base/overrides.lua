@@ -6,9 +6,9 @@ vim.wo.number = true
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-opt.clipboard = 'unnamedplus'
+opt.clipboard = "unnamedplus"
 
-opt.completeopt = 'menuone,noinsert,noselect'
+opt.completeopt = "menuone,noinsert,noselect"
 
 -- indet and wrap
 opt.tabstop = 4
@@ -19,15 +19,10 @@ opt.breakindent = true
 opt.wrap = false
 
 -- markdown word wrap
-vim.api.nvim_create_autocmd(
-  "FileType", { pattern = { "markdown" }, command = "setlocal wrap" }
-)
+vim.api.nvim_create_autocmd("FileType", { pattern = { "markdown" }, command = "setlocal wrap" })
 
 -- typst tabsize 2
-vim.api.nvim_create_autocmd(
-  "FileType", { pattern = { "typst" }, command = "setlocal tabstop=2 shiftwidth=2" }
-)
-
+vim.api.nvim_create_autocmd("FileType", { pattern = { "typst" }, command = "setlocal tabstop=2 shiftwidth=2 wrap" })
 
 -- search
 opt.hlsearch = false
