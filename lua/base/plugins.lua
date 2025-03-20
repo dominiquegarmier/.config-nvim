@@ -40,7 +40,7 @@ require("lazy").setup({
 	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
 	{ "neovim/nvim-lspconfig" },
 	{ "hrsh7th/cmp-nvim-lsp" },
-	{ "hrsh7th/nvim-cmp" },
+	{ "hrsh7th/nvim-cmp", commit = "b356f2c", pin = true },
 
 	-- linting and formatting
 	{ "williamboman/mason.nvim" },
